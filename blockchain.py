@@ -13,6 +13,7 @@ class Blockchain:
         self.current_transactions = []
         self.chain = []
         self.nodes = set()
+        self.transaction_history = []
 
         # Create the genesis block
         self.new_block(previous_hash='1', proof=100)
@@ -136,6 +137,14 @@ class Blockchain:
             'amount': amount,
         })
 
+        transaction = {
+            'sender': sender,
+            'recipient': recipient,
+            'amount': amount,
+            'timestamp': time()
+        }
+
+        self.transaction_history.append(transaction) 
         return self.last_block['index'] + 1
 
     @property
@@ -287,6 +296,13 @@ def consensus():
             'chain': blockchain.chain
         }
 
+    return jsonify(response), 200
+
+@app.route('/transactions/history', methods=['GET'])
+def transaction_history():
+    response = {
+        'transaction_history': blockchain.transaction_history
+    }
     return jsonify(response), 200
 
 
