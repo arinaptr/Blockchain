@@ -49,6 +49,7 @@ The request body should include the following JSON payload:
     "recipient": "recipient-address",
     "amount": 10
 }
+```
 
 Replace "sender-address" with the address of the transaction sender.
 Replace "recipient-address" with the address of the transaction recipient.
@@ -74,6 +75,7 @@ The request body should include the following JSON payload:
 {
     "nodes": ["node1", "node2", "node3"]
 }
+```
 
 Replace "node1", "node2", "node3" with the addresses of the nodes to be registered.
 
