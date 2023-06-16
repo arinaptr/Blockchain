@@ -16,7 +16,7 @@ The blockchain provides the following functionality:
 
 - **Consensus:** Users can resolve conflicts and reach consensus among nodes by making a GET request to the `/nodes/resolve` endpoint. This ensures that all nodes have the same valid chain.
 
-- **History:** Users can retrieve the transaction history by making a GET request to the `/history` endpoint. This returns the complete history log of transactions.
+- **History:** Users can retrieve the transaction history by making a GET request to the `transactions/history` endpoint. This returns the complete history log of transactions.
 
 ## Installation
 
@@ -97,7 +97,7 @@ This will ensure that all nodes have the same valid chain.
 
 ## Retrieving Transaction History
 
-To retrieve the transaction history, send a GET request to `http://localhost:5000/history`.
+To retrieve the transaction history, send a GET request to `http://localhost:5000/transactions/history`.
 This will return the complete history log of transactions.
 
 ![history](example/history.png)
